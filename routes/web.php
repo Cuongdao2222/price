@@ -11,18 +11,6 @@
 |
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/',function(){
 
     //  $img = Image::make(public_path('images/main.jpg'));
