@@ -60,9 +60,16 @@ class crawlController extends Controller
             $name  = strip_tags($html->find($value['name'], 0));
 
             if($key===4){
-                if($name ==''){
 
-                    $name = strip_tags($html->find($value['name1'], 0));
+               
+                if($name ==''){
+                    if(!empty($value['name1'])){
+                        $name = strip_tags($html->find($value['name1'], 0));
+                    }
+                    else{
+                        $name = '';
+                    }
+                    
                 }
 
             }
