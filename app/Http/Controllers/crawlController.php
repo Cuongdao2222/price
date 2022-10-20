@@ -34,7 +34,7 @@ class crawlController extends Controller
 
             ['name_url'=>'https://mediamart.vn/', 'site'=>'https://mediamart.vn/tag?key='.$model, 'name'=>'.product-name', 'price'=>'.product-price', 'remove'=>'.product-price-regular'],
 
-            ['name_url'=>'https://dienmaythienphu.vn','site'=>'https://dienmaythienphu.vn/?post_type=product&s='.$model, 'name'=>'.archive-product-title', 'price'=>'.amount bdi', 'name1' => '.page-content .title'],
+            ['name_url'=>'https://dienmaythienphu.vn','site'=>'https://dienmaythienphu.vn/?post_type=product&s='.$model, 'name'=>'.page-content h1', 'price'=>'ins .amount bdi', 'name1' => '.page-content .title'],
              ['name_url'=>'https://dienmaytinphat.com', 'site'=>'https://dienmaytinphat.com/?s='.$model, 'name'=>'.info h3 a', 'price'=>'.info .price'],
            
         ];
