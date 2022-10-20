@@ -30,9 +30,12 @@ class crawlController extends Controller
 
         $ar = [
             ['name_url'=>'https://dienmayabc.com',  'site'=>'https://dienmayabc.com/tim?q='.$model, 'name'=>'.name a', 'price'=>'.price', 'remove'=>'.percent'],
-            ['name_url'=>'https://mediamart.vn/', 'site'=>'https://mediamart.vn/tag?key='.$model, 'name'=>'.product-name', 'price'=>'.product-price', 'remove'=>'.product-price-regular'],
             ['name_url'=>'https://manhnguyen.com.vn', 'site'=>'https://manhnguyen.com.vn/tim-kiem?q='.$model, 'name'=>'.MLNname h6', 'price'=>'.product_item strong', 'remove'=>'.old_price'],
-            ['name_url'=>'https://dienmaythienphu.vn','site'=>'https://dienmaythienphu.vn/?post_type=product&s='.$model, 'name'=>'.archive-product-title', 'price'=>'.amount bdi', 'name1' => '.page-content .title']
+
+            ['name_url'=>'https://mediamart.vn/', 'site'=>'https://mediamart.vn/tag?key='.$model, 'name'=>'.product-name', 'price'=>'.product-price', 'remove'=>'.product-price-regular'],
+
+            ['name_url'=>'https://dienmaythienphu.vn','site'=>'https://dienmaythienphu.vn/?post_type=product&s='.$model, 'name'=>'.archive-product-title', 'price'=>'.amount bdi', 'name1' => '.page-content .title'],
+             ['name_url'=>'https://dienmaytinphat.com', 'site'=>'https://dienmaytinphat.com/?s='.$model, 'name'=>'.info h3 a', 'price'=>'.info .price'],
            
         ];
         
@@ -47,7 +50,7 @@ class crawlController extends Controller
         
         foreach ($ar as $key=>  $value) {
             
-            if($key==2){
+            if($key==1){
                 $html = file_get_html(trim($value['site']),  false, stream_context_create($arrContextOptions));
             }
             else{
@@ -56,7 +59,7 @@ class crawlController extends Controller
             $price = strip_tags($html->find($value['price'], 0));
             $name  = strip_tags($html->find($value['name'], 0));
 
-            if($key===3){
+            if($key===4){
                 if($name ==''){
 
                     $name = strip_tags($html->find($value['name1'], 0));
